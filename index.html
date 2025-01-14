@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shawnjr</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            font-family: Courier, monospace; /* Courier font */
+            background-color: #ffffff; /* White background */
+        }
+
+        .box {
+            width: 400px; /* Set box width */
+            height: 180px; /* Reduced fixed height */
+            padding: 20px; /* Add padding inside the box */
+            display: flex;
+            flex-direction: column; /* Stack elements vertically */
+            align-items: flex-start; /* Align items to the top-left */
+            justify-content: flex-start; /* Ensure content starts from the top */
+            text-align: left; /* Left align text inside the box */
+            white-space: pre-wrap; /* Preserve spaces and line breaks */
+            overflow: hidden; /* Prevent content from overflowing the box */
+        }
+
+        #typewriter {
+            font-size: 20px;
+            color: #1250C4; /* Text color in hex */
+            overflow-wrap: break-word; /* Break long words at the edge */
+        }
+
+    
+
+        /* Link styles */
+        a {
+            color: #1250C4;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <p id="typewriter"></p>
+        <span class="cursor" id="cursor"></span>
+    </div>
+    <script>
+        const plainText = `I practice design, teach yoga, and manage ‘Coping With Capitalism’ in San Francisco, California.\n\nSay hello ⇢`;
+        const speed = 50; // Typing speed in milliseconds
+        let index = 0;
+
+        function typeText() {
+            const typewriter = document.getElementById("typewriter");
+            const cursor = document.getElementById("cursor");
+
+            if (index < plainText.length) {
+                // Add one character at a time
+                typewriter.textContent += plainText[index];
+                index++;
+                setTimeout(typeText, speed);
+            } else {
+                // Replace plain text with HTML containing links
+                typewriter.innerHTML = `I practice design, teach yoga, and manage ‘<a href="https://copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>’ in San Francisco, California.<br><br><a href="mailto:hello@shawnjr.online">Say hello ⇢</a>`;
+                // Remove cursor after typing is complete
+                cursor.style.display = "none";
+            }
+        }
+
+        window.onload = typeText;
+    </script>
+</body>
+</html>
