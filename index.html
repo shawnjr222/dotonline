@@ -17,9 +17,11 @@
         }
 
         .box {
-            width: 400px; /* Set box width */
-            height: 180px; /* Reduced fixed height */
+            width: 400px; /* Default width */
+            height: 200px; /* Fixed height */
             padding: 20px; /* Add padding inside the box */
+            border: 2px solid #1250C4; /* Optional: Add a border */
+            border-radius: 8px; /* Optional: Rounded corners */
             display: flex;
             flex-direction: column; /* Stack elements vertically */
             align-items: flex-start; /* Align items to the top-left */
@@ -35,7 +37,21 @@
             overflow-wrap: break-word; /* Break long words at the edge */
         }
 
-    
+        /* Blinking cursor for the end of the current line */
+        .cursor {
+            display: inline-block;
+            width: 2px;
+            background-color: #1250C4;
+            animation: blink-cursor 0.7s step-end infinite;
+            vertical-align: text-bottom;
+        }
+
+        /* Cursor blinking effect */
+        @keyframes blink-cursor {
+            50% {
+                opacity: 0;
+            }
+        }
 
         /* Link styles */
         a {
@@ -45,6 +61,19 @@
 
         a:hover {
             text-decoration: underline;
+        }
+
+        /* Responsive styles for mobile devices */
+        @media (max-width: 768px) {
+            .box {
+                width: 90%; /* Make the box take up 90% of the screen width */
+            }
+        }
+
+        @media (max-width: 480px) {
+            .box {
+                width: 95%; /* Further reduce the width for very small screens */
+            }
         }
     </style>
 </head>
