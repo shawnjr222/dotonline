@@ -32,7 +32,6 @@
         #typewriter {
             font-size: 20px;
             color: #1250C4; /* Text color in hex */
-            overflow-wrap: break-word; /* Break long words at the edge */
             display: inline; /* Keep text and cursor on the same line */
         }
 
@@ -40,7 +39,7 @@
             font-size: 20px;
             color: #1250C4;
             font-weight: bold;
-            display: inline;
+            display: inline; /* Ensure cursor follows the text */
             animation: blink 0.7s steps(2) infinite; /* Blinking animation */
         }
 
@@ -78,8 +77,9 @@
 </head>
 <body>
     <div class="box">
-        <p id="typewriter"></p>
-        <span class="cursor" id="cursor">|</span>
+        <p>
+            <span id="typewriter"></span><span class="cursor" id="cursor">|</span>
+        </p>
     </div>
     <script>
         const plainText = `I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢`;
