@@ -35,8 +35,6 @@
             overflow-wrap: break-word; /* Break long words at the edge */
         }
 
-
-
         /* Link styles */
         a {
             color: #1250C4;
@@ -69,7 +67,8 @@
         <span class="cursor" id="cursor"></span>
     </div>
     <script>
-        const plainText; = I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢;
+        // Corrected variable declaration and assignment
+        const plainText = `I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢`;
         const speed = 50; // Typing speed in milliseconds
         let index = 0;
 
@@ -84,7 +83,7 @@
                 setTimeout(typeText, speed);
             } else {
                 // Replace plain text with HTML containing links
-                typewriter.innerHTML = I practice design, teach yoga, and manage ‘<a href="https://copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>’ out of San Francisco, California.<br><br><a href="mailto:hello@shawnjr.online">Say hello ⇢</a>;
+                typewriter.innerHTML = `I practice design, teach yoga, and manage ‘<a href="https://copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>’ out of San Francisco, California.<br><br><a href="mailto:hello@shawnjr.online">Say hello ⇢</a>`;
                 // Remove cursor after typing is complete
                 cursor.style.display = "none";
             }
