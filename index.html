@@ -33,6 +33,8 @@
             font-size: 20px;
             color: #1250C4; /* Text color in hex */
             display: inline; /* Keep text and cursor on the same line */
+            margin: 0; /* Remove any default margin */
+            padding: 0; /* Remove any default padding */
         }
 
         .cursor {
@@ -41,6 +43,8 @@
             font-weight: bold;
             display: inline; /* Ensure cursor follows the text */
             animation: blink 0.7s steps(2) infinite; /* Blinking animation */
+            margin: 0; /* Remove any default margin */
+            padding: 0; /* Remove any default padding */
         }
 
         @keyframes blink {
@@ -89,6 +93,9 @@
         function typeText() {
             const typewriter = document.getElementById("typewriter");
             const cursor = document.getElementById("cursor");
+
+            // Clear any existing content to ensure no extra space
+            typewriter.textContent = "";
 
             if (index < plainText.length) {
                 // Add one character at a time
