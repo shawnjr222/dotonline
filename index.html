@@ -29,30 +29,13 @@
             overflow: hidden; /* Prevent content from overflowing the box */
         }
 
-        p {
-            margin: 0; /* Remove default browser margin */
-            padding: 0; /* Remove default padding */
-        }
-
         #typewriter {
             font-size: 20px;
             color: #1250C4; /* Text color in hex */
-            display: inline; /* Keep text and cursor on the same line */
+            overflow-wrap: break-word; /* Break long words at the edge */
         }
 
-        .cursor {
-            font-size: 20px;
-            color: #1250C4;
-            font-weight: bold;
-            display: inline; /* Ensure cursor follows the text */
-            animation: blink 0.7s steps(2) infinite; /* Blinking animation */
-        }
 
-        @keyframes blink {
-            0% { opacity: 1; }
-            50% { opacity: 0; }
-            100% { opacity: 1; }
-        }
 
         /* Link styles */
         a {
@@ -82,12 +65,11 @@
 </head>
 <body>
     <div class="box">
-        <p>
-            <span id="typewriter"></span><span class="cursor" id="cursor">|</span>
-        </p>
+        <p id="typewriter"></p>
+        <span class="cursor" id="cursor"></span>
     </div>
     <script>
-        const plainText = `I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢`;
+        const plainText = I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢;
         const speed = 50; // Typing speed in milliseconds
         let index = 0;
 
@@ -101,6 +83,8 @@
                 index++;
                 setTimeout(typeText, speed);
             } else {
+                // Replace plain text with HTML containing links
+                typewriter.innerHTML = I practice design, teach yoga, and manage ‘<a href="https://copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>’ out of San Francisco, California.<br><br><a href="mailto:hello@shawnjr.online">Say hello ⇢</a>;
                 // Remove cursor after typing is complete
                 cursor.style.display = "none";
             }
