@@ -33,9 +33,22 @@
             font-size: 20px;
             color: #1250C4; /* Text color in hex */
             overflow-wrap: break-word; /* Break long words at the edge */
+            display: inline; /* Keep text and cursor on the same line */
         }
 
+        .cursor {
+            font-size: 20px;
+            color: #1250C4;
+            font-weight: bold;
+            display: inline;
+            animation: blink 0.7s steps(2) infinite; /* Blinking animation */
+        }
 
+        @keyframes blink {
+            0% { opacity: 1; }
+            50% { opacity: 0; }
+            100% { opacity: 1; }
+        }
 
         /* Link styles */
         a {
@@ -66,7 +79,7 @@
 <body>
     <div class="box">
         <p id="typewriter"></p>
-        <span class="cursor" id="cursor"></span>
+        <span class="cursor" id="cursor">|</span>
     </div>
     <script>
         const plainText = `I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢`;
