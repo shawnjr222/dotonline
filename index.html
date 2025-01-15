@@ -33,8 +33,6 @@
             font-size: 20px;
             color: #1250C4; /* Text color in hex */
             display: inline; /* Keep text and cursor on the same line */
-            margin: 0; /* Remove any default margin */
-            padding: 0; /* Remove any default padding */
         }
 
         .cursor {
@@ -43,8 +41,6 @@
             font-weight: bold;
             display: inline; /* Ensure cursor follows the text */
             animation: blink 0.7s steps(2) infinite; /* Blinking animation */
-            margin: 0; /* Remove any default margin */
-            padding: 0; /* Remove any default padding */
         }
 
         @keyframes blink {
@@ -94,17 +90,12 @@
             const typewriter = document.getElementById("typewriter");
             const cursor = document.getElementById("cursor");
 
-            // Clear any existing content to ensure no extra space
-            typewriter.textContent = "";
-
             if (index < plainText.length) {
                 // Add one character at a time
                 typewriter.textContent += plainText[index];
                 index++;
                 setTimeout(typeText, speed);
             } else {
-                // Replace plain text with HTML containing links
-                typewriter.innerHTML = `I practice design, teach yoga, and manage ‘<a href="https://copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>’ out of San Francisco, California.<br><br><a href="mailto:hello@shawnjr.online">Say hello ⇢</a>`;
                 // Remove cursor after typing is complete
                 cursor.style.display = "none";
             }
