@@ -3,46 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>shawnjr</title>
+    <title>Terminal Effect</title>
     <style>
         body {
             margin: 0;
             padding: 0;
+            background-color: #222222; /* Terminal background */
+            color: #FFFFFF; /* Terminal text color */
+            font-family: Courier, monospace; /* Terminal font */
             display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: Courier, monospace; /* Courier font */
-            background-color: #ffffff; /* White background */
+            justify-content: center; /* Center the box horizontally */
+            align-items: center; /* Center the box vertically */
+            height: 100vh; /* Full height of the viewport */
         }
 
         .box {
             width: 400px; /* Default width */
-            height: 200px; /* Fixed height */
-            padding: 20px; /* Add padding inside the box */
+            height: auto; /* Adjust height based on content */
+            padding: 20px; /* Padding inside the box */
+            background-color: #222222; /* Match background color */
+            text-align: left; /* Align text to the left */
+            white-space: pre-wrap; /* Preserve line breaks */
             display: flex;
-            flex-direction: column; /* Stack elements vertically */
-            align-items: flex-start; /* Align items to the top-left */
-            justify-content: flex-start; /* Ensure content starts from the top */
-            text-align: left; /* Left align text inside the box */
-            white-space: pre-wrap; /* Preserve spaces and line breaks */
-            overflow: hidden; /* Prevent content from overflowing the box */
+            flex-direction: column;
+            justify-content: flex-start; /* Start typing from the top */
+            align-items: flex-start; /* Align text to the left */
+            box-sizing: border-box; /* Include padding in dimensions */
+            overflow: hidden; /* Prevent overflow */
         }
 
-        #typewriter {
-            font-size: 20px;
-            color: #1250C4; /* Text color in hex */
-            overflow-wrap: break-word; /* Break long words at the edge */
+        .cursor {
+            display: inline-block;
+            width: 8px; /* Width of the rectangle cursor */
+            height: 1.2rem; /* Height matches font size */
+            background-color: #FFFFFF; /* Cursor color */
+            animation: blink 0.6s steps(2) infinite;
+            vertical-align: bottom; /* Align cursor with text */
         }
 
-        /* Link styles */
         a {
-            color: #1250C4;
-            text-decoration: none;
+            color: inherit; /* Matches surrounding text color */
+            text-decoration: none; /* Remove underline */
         }
 
         a:hover {
-            text-decoration: underline;
+            text-decoration: underline; /* Add underline on hover */
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
         }
 
         /* Responsive styles for mobile devices */
@@ -56,7 +67,7 @@
         @media (max-width: 480px) {
             .box {
                 width: 95%; /* Further reduce the width for very small screens */
-                height: 40vh;
+                height: auto; /* Ensure the height fits content */
             }
         }
     </style>
@@ -64,28 +75,32 @@
 <body>
     <div class="box">
         <p id="typewriter"></p>
-        <span class="cursor" id="cursor"></span>
     </div>
     <script>
-        // Corrected variable declaration and assignment
-        const plainText = `I practice design, teach yoga, and manage ‘Coping With Capitalism’ out of San Francisco, California.\n\nSay hello ⇢`;
-        const speed = 50; // Typing speed in milliseconds
+        const text = `I practice design, teach yoga, and manage 'Coping With Capitalism' out of San Francisco, California.
+
+Say hello ⇢`;
+        const speed = 70; // Typing speed in milliseconds
         let index = 0;
 
         function typeText() {
             const typewriter = document.getElementById("typewriter");
-            const cursor = document.getElementById("cursor");
 
-            if (index < plainText.length) {
-                // Add one character at a time
-                typewriter.textContent += plainText[index];
+            if (index < text.length) {
+                // Add next character and keep the cursor in place
+                typewriter.innerHTML = text.slice(0, index + 1) + '<span class="cursor"></span>';
                 index++;
                 setTimeout(typeText, speed);
             } else {
-                // Replace plain text with HTML containing links
-                typewriter.innerHTML = `I practice design, teach yoga, and manage ‘<a href="https://copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>’ out of San Francisco, California.<br><br><a href="mailto:hello@shawnjr.online">Say hello ⇢</a>`;
-                // Remove cursor after typing is complete
-                cursor.style.display = "none";
+                // Remove the cursor when typing is complete
+                const cursor = document.querySelector(".cursor");
+                cursor.remove();
+
+                // Replace plain text with links dynamically
+                typewriter.innerHTML = `
+I practice design, teach yoga, and manage '<a href="https://www.copingwithcapitalism.com" target="_blank">Coping With Capitalism</a>' out of San Francisco, California.
+
+<a href="mailto:hello@shawnjr.online">Say hello ⇢</a>`.trim();
             }
         }
 
