@@ -19,17 +19,19 @@
 
         .box {
             width: 400px; /* Default width */
-            height: auto; /* Adjust height based on content */
+            height: 200px; /* Fixed height for the box */
             padding: 20px; /* Padding inside the box */
             background-color: #222222; /* Match background color */
             text-align: left; /* Align text to the left */
             white-space: pre-wrap; /* Preserve line breaks */
-            display: flex;
-            flex-direction: column;
-            justify-content: flex-start; /* Start typing from the top */
-            align-items: flex-start; /* Align text to the left */
-            box-sizing: border-box; /* Include padding in dimensions */
+            position: relative; /* Anchor content inside */
             overflow: hidden; /* Prevent overflow */
+        }
+
+        #typewriter {
+            position: absolute; /* Anchor the text inside the box */
+            top: 0; /* Start from the top */
+            left: 0; /* Align to the left */
         }
 
         .cursor {
@@ -60,7 +62,7 @@
         @media (max-width: 768px) {
             .box {
                 width: 90%; /* Make the box take up 90% of the screen width */
-                height: 20vh;
+                height: 20vh; /* Adjust height for smaller devices */
             }
         }
 
