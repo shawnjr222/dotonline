@@ -74,10 +74,10 @@
         <p id="typewriter"></p>
     </div>
     <script>
-        const text = `Design, Yoga, and Advocacy. With Love from San Francisco, California.
+        const text = `Design, Yoga, and Advocacy. With love from San Francisco, Ca.
 
 Say hello ⇢`;
-        const speed = 70; // Typing speed in milliseconds
+        const speed = 77; // Typing speed in milliseconds
         let index = 0;
 
         function typeText() {
@@ -95,7 +95,7 @@ Say hello ⇢`;
 
                 // Replace plain text with links dynamically
                 typewriter.innerHTML = `
-Design, Yoga, and '<a href="https://medium.com/coping-with-capitalism" target="_blank">Advocacy</a>'. With Love from San Francisco, California.
+Design, Yoga, and <a href="https://medium.com/coping-with-capitalism" target="_blank">Advocacy</a>. With love from San Francisco, Ca.
 
 <a href="mailto:hello@shawnjr.online">Say hello ⇢</a>`.trim();
             }
