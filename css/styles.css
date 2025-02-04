@@ -331,44 +331,43 @@ footer.light .footer-col .btn p {
 
 /* ✅ Responsive Fix for Smaller Devices */
 @media (max-width: 800px) {
-  .hero-row {
+  .hero {
+    min-height: 100svh;               /* ✅ Use small viewport height for iOS compatibility */
     display: flex;
     flex-direction: column;
-    align-items: stretch;
-    padding: 0;                  /* ✅ Remove all padding */
-    margin: 0;                   /* ✅ Remove all margins */
+    justify-content: space-between;   /* ✅ Distribute space evenly */
   }
 
-  /* ✅ "Shawn Jr" - Close to the Left Edge */
+  .hero-row {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 0;
+    margin: 0;
+  }
+
+  /* ✅ "Shawn Jr" - Left-Aligned with Minimal Spacing */
   .hero-row:nth-child(1) .header {
     text-align: left;
-    margin: 2px 0 2px 2px;     /* ✅ 8px from the left, space on top and bottom */
+    margin: 16px 0 8px 8px;           /* ✅ Slightly reduced margins */
   }
 
-/* ✅ Paragraph Alignment */
-.fade-in-text {
-  margin: 0 0 180px 0px;         /* ✅ 8px left margin to align with "Shawn Jr" */
-  line-height: 1.6;
-  max-width: 90%;                /* ✅ Control the paragraph width */
-  text-align: left;              /* ✅ Align the text to the left */
-}
+  /* ✅ Paragraph Alignment */
+  .fade-in-text {
+    margin: 8px 8px 12px 8px;         /* ✅ Consistent padding */
+    line-height: 1.5;
+  }
 
-
-  /* ✅ "Design & Advocacy" - Fully Visible, Right-Aligned */
+  /* ✅ "Design & Advocacy" - Fully Visible */
   .hero-row:nth-child(2) .header {
     text-align: right;
-    margin: 2px 2px 2px 0;     /* ✅ 8px from the right, space on top and bottom */
-    max-width: calc(100% - 2px); /* ✅ Prevent overflow on the right edge */
+    margin: 8px 8px 16px 0;           /* ✅ Ensure no content gets cut off */
   }
 
   .hero-row:nth-child(2) .header h1 {
-    font-size: 36px;
+    font-size: 32px;                  /* ✅ Slight font size reduction for better fit */
     line-height: 1.2;
     margin: 0;
-    overflow-wrap: break-word;   /* ✅ Break long words if necessary */
   }
-
-
 }
 
 
