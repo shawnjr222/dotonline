@@ -330,9 +330,9 @@ footer.light .footer-col .btn p {
 
 
 /* ✅ Responsive Fix for Devices with Width ≤ 949px */
-@media (max-width: 949px) {
+@media (max-width: 400px) {
   .hero {
-    min-height: 100dvh;               /* ✅ Dynamic viewport height for iOS Safari */
+    height: 85dvh;                 /* ✅ Dynamic viewport height for iOS Safari */
     display: flex;
     flex-direction: column;
     justify-content: space-between;   /* ✅ Distribute space evenly */
@@ -359,10 +359,10 @@ footer.light .footer-col .btn p {
     max-width: 90%;
   }
 
-  /* ✅ "Design & Advocacy" - Fully Visible */
-  .hero-row:nth-child(2) .header {
+   /* ✅ "Design & Advocacy" Alignment */
+   .hero-row:nth-child(2) .header {
     text-align: right;
-    margin: 8px 12px 128px 0;          /* ✅ Adjust right margin */
+    margin: 8px 12px 16px 0;
   }
 
   .hero-row:nth-child(2) .header h1 {
@@ -379,49 +379,49 @@ footer.light .footer-col .btn p {
 
 
 
-/* ✅ Target Devices with Width > 400px (e.g., iPhone 13) */
+/* ✅ Adjust Hero Section for Devices Between 401px and 949px */
 @media (min-width: 401px) and (max-width: 949px) {
   .hero {
-    min-height: 100dvh;               /* ✅ Dynamic viewport height for iOS */
+    height: 85dvh;                /* ✅ Reduce the section height */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;   /* ✅ Even vertical spacing */
-    overflow: hidden;                 /* ✅ Prevent content from spilling out */
+    justify-content: space-between;  /* ✅ Distribute content evenly */
+    background-color: var(--color-bg); /* ✅ Ensure background color remains consistent */
   }
 
   .hero-row {
     flex-direction: column;
     align-items: stretch;
-    padding: 0 12px;                  /* ✅ Add slight padding for breathing room */
+    padding: 0 12px;                 /* ✅ Maintain slight horizontal padding */
     margin: 0;
   }
 
-  /* ✅ "Shawn Jr" - Left-Aligned */
+  /* ✅ "Shawn Jr" Alignment */
   .hero-row:nth-child(1) .header {
     text-align: left;
-    margin: 16px 0 8px 12px;          /* ✅ Adjusted left margin */
+    margin: 16px 0 8px 12px;
   }
 
   /* ✅ Paragraph Alignment */
   .fade-in-text {
-    margin: 8px 12px 12px 12px;       /* ✅ Consistent horizontal spacing */
+    margin: 8px 12px 12px 12px;
     line-height: 1.5;
     max-width: 90%;
   }
 
-  /* ✅ "Design & Advocacy" - Fully Visible */
+  /* ✅ "Design & Advocacy" Alignment */
   .hero-row:nth-child(2) .header {
     text-align: right;
-    margin: 8px 12px 128px 0;          /* ✅ Adjust right margin */
+    margin: 8px 12px 16px 0;
   }
 
   .hero-row:nth-child(2) .header h1 {
-    font-size: 34px;                  /* ✅ Slightly larger font size */
+    font-size: 34px;
     line-height: 1.2;
     margin: 0;
-    word-break: break-word;           /* ✅ Prevent overflow */
   }
 }
+
 
 
 
