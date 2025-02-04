@@ -412,7 +412,7 @@ footer.light .footer-col .btn p {
   /* ✅ "Design & Advocacy" - Fully Visible */
   .hero-row:nth-child(2) .header {
     text-align: right;
-    margin: 8px 12px 64px 0;          /* ✅ Adjust right margin */
+    margin: 8px 12px 128px 0;          /* ✅ Adjust right margin */
   }
 
   .hero-row:nth-child(2) .header h1 {
