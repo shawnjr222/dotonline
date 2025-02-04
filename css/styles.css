@@ -253,7 +253,7 @@ footer.light .footer-col .btn p {
   z-index: 2;
 }
 
-@media (min-width: 600px) and (max-width: 900px) {
+@media (max-width: 900px) {
   h1 {
     font-size: 40px;
   }
@@ -330,7 +330,7 @@ footer.light .footer-col .btn p {
 
 
 /* ✅ Responsive Fix for Smaller Devices */
-@media (max-width: 600px) {
+@media (max-width: 800px) {
   .hero-row {
     display: flex;
     flex-direction: column;
