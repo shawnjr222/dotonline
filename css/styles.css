@@ -253,7 +253,7 @@ footer.light .footer-col .btn p {
   z-index: 2;
 }
 
-@media (max-width: 900px) {
+@media (min-width: 600px) and (max-width: 900px) {
   h1 {
     font-size: 40px;
   }
@@ -276,6 +276,11 @@ footer.light .footer-col .btn p {
     left: 50%;
   }
 }
+
+
+
+
+
 
 /* ✅ Hero Section */
 .hero {
@@ -324,9 +329,8 @@ footer.light .footer-col .btn p {
 
 
 
-
 /* ✅ Responsive Fix for Smaller Devices */
-@media (max-width: 800px) {
+@media (max-width: 600px) {
   .hero-row {
     display: flex;
     flex-direction: column;
