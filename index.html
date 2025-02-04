@@ -120,6 +120,21 @@
 
       
 
+      // ✅ Define the Color Palettes
+const colorPalettes = [
+  { accent: "#F1DBC3", bg: "#352D25" },
+  { accent: "#FFFFFF", bg: "#222222" },
+  { accent: "#CBEAFF", bg: "#1250C4" }
+];
+
+// ✅ Select a Random Palette
+const randomPalette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
+
+// ✅ Apply the Palette to CSS Variables
+document.documentElement.style.setProperty("--color-accent", randomPalette.accent);
+document.documentElement.style.setProperty("--color-bg", randomPalette.bg);
+
+
 
 
       
