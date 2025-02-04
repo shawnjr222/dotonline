@@ -332,7 +332,7 @@ footer.light .footer-col .btn p {
 /* ✅ Responsive Fix for Devices with Width ≤ 949px */
 @media (max-width: 400px) {
   .hero {
-    height: 95dvh;                 /* ✅ Dynamic viewport height for iOS Safari */
+    height: 98dvh;                 /* ✅ Dynamic viewport height for iOS Safari */
     display: flex;
     flex-direction: column;
     justify-content: space-between;   /* ✅ Distribute space evenly */
@@ -382,7 +382,7 @@ footer.light .footer-col .btn p {
 /* ✅ Adjust Hero Section for Devices Between 401px and 949px */
 @media (min-width: 401px) and (max-width: 949px) {
   .hero {
-    height: 95dvh;                /* ✅ Reduce the section height */
+    height: 98dvh;                /* ✅ Reduce the section height */
     display: flex;
     flex-direction: column;
     justify-content: space-between;  /* ✅ Distribute content evenly */
