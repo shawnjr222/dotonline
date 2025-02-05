@@ -5,7 +5,7 @@
   color: inherit;
   font-weight: 500;
   display: inline-block;
-  padding-bottom: 2px;
+  padding-bottom: 4px;
   transition: color 0.3s ease;
   overflow: hidden; /* Prevents overflow during the animation */
 }
@@ -16,7 +16,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 2px; /* Thickness of the underline */
+  height: 1px; /* Thickness of the underline */
   width: 100%; /* Full width */
   background-color: currentColor;
   transform: scaleX(0); /* Initially invisible */
