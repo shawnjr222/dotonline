@@ -15,8 +15,8 @@
 
 /* Root Variables */
 :root {
-  --color-accent: #F1DBC3;
-  --color-bg: #352D25;
+  --color-accent: #CBEAFF;
+  --color-bg: #1250C4;
 
   --font-large: 140px;
   --font-regular: 14px;
@@ -371,6 +371,22 @@ footer.light .footer-col .btn p {
     margin: 0;
     word-break: break-word;           /* ✅ Prevent overflow for long words */
   }
+
+  .footer-row:nth-child(2) {
+    display: flex;
+    justify-content: space-between; /* Push items to opposite ends */
+    padding: 0 0em;                 /* Add horizontal padding */
+  }
+
+  .footer-row:nth-child(2) p {
+    font-size: var(--font-tiny);    /* Slightly reduce the font size */
+    width: 45%;                     /* Limit the width of each item */
+    text-align: left;               /* Align text to the left */
+  }
+
+  .footer-row:nth-child(2) p:last-child {
+    text-align: right;              /* Align the last item to the right */
+  }
 }
 
 
@@ -419,6 +435,21 @@ footer.light .footer-col .btn p {
     font-size: 34px;
     line-height: 1.2;
     margin: 0;
+  }
+  .footer-row:nth-child(2) {
+    display: flex;
+    justify-content: space-between; /* Push items to opposite ends */
+    padding: 0 0em;                 /* Add horizontal padding */
+  }
+
+  .footer-row:nth-child(2) p {
+    font-size: var(--font-tiny);    /* Slightly reduce the font size */
+    width: 45%;                     /* Limit the width of each item */
+    text-align: left;               /* Align text to the left */
+  }
+
+  .footer-row:nth-child(2) p:last-child {
+    text-align: right;              /* Align the last item to the right */
   }
 }
 
