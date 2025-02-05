@@ -1,3 +1,51 @@
+/* Base link styles for the email link */
+.email-link {
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font-weight: 500;
+  display: inline-block;
+  padding-bottom: 2px;
+  transition: color 0.3s ease;
+  overflow: hidden; /* Prevents overflow during the animation */
+}
+
+/* Underline Effect */
+.email-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px; /* Thickness of the underline */
+  width: 100%; /* Full width */
+  background-color: currentColor;
+  transform: scaleX(0); /* Initially invisible */
+  transform-origin: left; /* Grows from the left on hover */
+  transition: transform 0.4s ease-in-out, transform-origin 0s; /* Smooth animation */
+}
+
+/* Hover State */
+.email-link:hover::after {
+  transform: scaleX(1); /* Expand to full width */
+  transform-origin: left; /* Expands from left to right */
+}
+
+/* Mouse Leave State (Reverses to the Right) */
+.email-link:not(:hover)::after {
+  transform: scaleX(0); /* Shrinks to zero */
+  transform-origin: right; /* Shrinks towards the right */
+}
+
+
+
+
+
+
+
+
+
+
+
 /* Font Imports */
 @font-face {
   font-family: "M";
