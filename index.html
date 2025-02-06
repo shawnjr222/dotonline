@@ -1,143 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Shawn Jr</title>
-    <link rel="stylesheet" href="css/styles.css">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Shawn Jr</title>
+  <link rel="stylesheet" href="css/styles.css">
 
-    <script
-      type="module"
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
-    ></script>
-    <script
-      nomodule
-      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
-    ></script>
-  </head>
-  <body>
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+<body>
 
-    <!-- website content -->
-    <section class="hero">
-      <div class="container">
-        <div class="hero-row">
-          <div class="header">
-            <h1>Shawn</h1>
-            <h1>Jr</h1>
-          </div>
-        </div>
-        <div class="hero-row">
-          <p class="fade-in-text">I utilize design thinking, empathy and technology to co-create a better world.</p>
-          <div class="header">
-            <h1>Design &</h1>
-            <h1>Advocacy</h1>
-          </div>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-row">
+        <div class="header">
+          <h1>Shawn</h1>
+          <h1>Jr</h1>
         </div>
       </div>
-    </section>
-
-    <footer>
-      <div class="container">
-        <div class="footer-row">
-          <div class="footer-col">
-            <p>"We have to talk about liberating minds as well as liberating society." - Angela Davis</p>
-          </div>
-          <div class="footer-col">
-            <p>Social</p>
-            <br />
-            <div class="socials">
-              <a href="https://medium.com/@shawnjr" target="_blank" rel="noopener noreferrer">ME</a>
-              <a href="https://www.linkedin.com/in/shawnjr/" target="_blank" rel="noopener noreferrer">LI</a>
-            </div>
-          </div>
-          <div class="footer-col">
-            <p>Contact</p>
-            <br />
-            <a href="mailto:hello@shawnjr.online" class="email-link">hello@shawnjr.online</a>
-          </div>
-          <div class="footer-col">
-            <p>Community</p>
-            <br />
-            <div class="magnetic-area">
-              <button class="magnet-btn btn" data-link="https://www.copingwithcapitalism.com">
-                <p>Coping With Capitalism</p>
-              </button>
-            </div>
-          </div>
-        </div>
-        <div class="footer-row">
-          <p id="sf-time">San Francisco, CA 00:00</p>
-          <p id="current-year">© 2025 Shawn Jr All rights reserved.</p>
+      <div class="hero-row">
+        <p class="fade-in-text">I utilize design thinking, empathy and technology to co-create a better world.</p>
+        <div class="header">
+          <h1>Design &</h1>
+          <h1>Advocacy</h1>
         </div>
       </div>
-    </footer>
+    </div>
+  </section>
 
-    <!-- ✅ Load GSAP First -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
-    <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
+  <footer>
+    <div class="container">
+      <div class="footer-row">
 
-    <!-- ✅ Custom Scripts -->
-    <script>
-      function updateTimeAndYear() {
-        const timeOptions = { 
-          timeZone: 'America/Los_Angeles', 
-          hour: '2-digit', 
-          minute: '2-digit', 
-          second: '2-digit', 
-          hour12: true 
-        };
-        const formatter = new Intl.DateTimeFormat([], timeOptions);
-        const currentTime = formatter.format(new Date());
+      <!-- ✅ About Section -->
+<div class="footer-col">
+  <p>About</p>
+  <p>7yrs of Product Design Experience<br><br>B.S Industrial Design from Georgia Tech<br><br>200hr Yoga Teacher Training from FolkSF</p>
+</div>
 
-        const currentYear = new Date().getFullYear();
+<!-- ✅ Community Section with Email Link Styling -->
+<div class="footer-col">
+  <p>Community</p>
+  <a href="https://www.copingwithcapitalism.com" target="_blank" rel="noopener noreferrer" class="email-link">Coping With Capitalism</a> <!-- Added email-link class -->
+</div>
 
-        document.getElementById('sf-time').textContent = `San Francisco, CA ${currentTime}`;
-        document.getElementById('current-year').textContent = `© ${currentYear} Shawn Jr All rights reserved.`;
-      }
-
-      setInterval(updateTimeAndYear, 1000);
-      window.onload = updateTimeAndYear;
-
-      // ✅ Coping With Capitalism Button Logic
-      document.addEventListener("DOMContentLoaded", function () {
-        const copingButton = document.querySelector(".magnet-btn");
-
-        if (copingButton) {
-          copingButton.addEventListener("click", function (event) {
-            const link = this.getAttribute("data-link");
-            if (link) {
-              window.open(link, "_blank", "noopener,noreferrer");
-            } else {
-              console.error("No link found in data-link attribute.");
-            }
-          });
-        }
-      });
+<!-- ✅ Contact Section with Email Link Styling -->
+<div class="footer-col">
+  <p>Contact</p>
+  <a href="mailto:hello@shawnjr.online" class="email-link">Let's Get in Touch</a> <!-- Added email-link class -->
+</div>
 
 
 
+      </div>
 
-      
+      <!-- Footer Bottom Row -->
+      <div class="footer-row">
+        <p id="sf-time">San Francisco, CA 00:00</p>
+        <p id="current-year">© 2025 Shawn Jr All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-      // ✅ Define the Color Palettes
-const colorPalettes = [
-  { accent: "#F1DBC3", bg: "#352D25" }
-];
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.0/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lenis@1.1.5/dist/lenis.min.js"></script>
 
-// ✅ Select a Random Palette
-const randomPalette = colorPalettes[Math.floor(Math.random() * colorPalettes.length)];
+  <script>
+    function updateTimeAndYear() {
+      const timeOptions = { 
+        timeZone: 'America/Los_Angeles', 
+        hour: '2-digit', 
+        minute: '2-digit', 
+        second: '2-digit', 
+        hour12: true 
+      };
+      const formatter = new Intl.DateTimeFormat([], timeOptions);
+      const currentTime = formatter.format(new Date());
 
-// ✅ Apply the Palette to CSS Variables
-document.documentElement.style.setProperty("--color-accent", randomPalette.accent);
-document.documentElement.style.setProperty("--color-bg", randomPalette.bg);
+      const currentYear = new Date().getFullYear();
 
+      document.getElementById('sf-time').textContent = `San Francisco, CA ${currentTime}`;
+      document.getElementById('current-year').textContent = `© ${currentYear} Shawn Jr All rights reserved.`;
+    }
 
+    setInterval(updateTimeAndYear, 1000);
+    window.onload = updateTimeAndYear;
+  </script>
 
-
-      
-    </script>
-
-    <script src="./js/script.js"></script>
-  </body>
+  <script src="./js/script.js"></script>
+</body>
 </html>
