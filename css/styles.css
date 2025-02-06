@@ -16,7 +16,7 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  height: 1px; /* Thickness of the underline */
+  height: 1.5px; /* Thickness of the underline */
   width: 100%; /* Full width */
   background-color: currentColor;
   transform: scaleX(0); /* Initially invisible */
@@ -63,10 +63,11 @@
 
 /* Root Variables */
 :root {
-  --color-accent: #CBEAFF;
-  --color-bg: #1250C4;
+  --color-accent: #F1DBC3;
+  --color-bg: #352D25;
 
   --font-large: 140px;
+  --font-reg: 18px;
   --font-regular: 14px;
   --font-small: 12px;
   --font-tiny: 10px;
@@ -179,6 +180,7 @@ img {
   clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 100%);
 }
 
+/* ✅ Footer Styling */
 footer {
   background: var(--color-accent);
   color: var(--color-bg);
@@ -195,47 +197,121 @@ footer.light p {
 footer .container {
   display: flex;
   flex-direction: column;
+  gap: 2em; /* Spacing between footer rows */
 }
 
-.footer-row:nth-child(2) {
-  width: 100%;
+/* ✅ Footer Row - Equal Columns */
+.footer-row {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;               /* Allow stacking on smaller screens */
+  gap: 1.5em;                    /* Space between columns */
+  align-items: flex-start;       /* Align items to the top */
 }
 
-.footer-row:nth-child(2) p {
-  font-size: var(--font-small);
+/* ✅ Footer Columns - Equal Width */
+.footer-col {
+  flex: 1;                        /* Equal width for all columns */
+  min-width: 200px;               /* Minimum width before stacking */
+  padding: 1.5em;                 /* Consistent padding */
+  box-sizing: border-box;
 }
 
-.footer-row:nth-child(1) {
-  width: 100%;
-  display: flex;
+/* ✅ Align About Section with Footer Bottom Row */
+.footer-row:last-child {
   justify-content: space-between;
-  padding-bottom: 8em;
+  align-items: flex-start;
+  padding: 0 1.5em;               /* Align with footer-col padding */
 }
 
-.footer-col:nth-child(1) p {
-  font-size: var(--font-tiny);
+/* ✅ Apply Regular Font Size for About Section */
+.footer-col p:first-child {  
+  font-size: var(--font-regular); /* Heading: About */  
+  font-weight: 500;  
+  font-style: italic;
 }
 
-.footer-col:nth-child(2) a {
-  color: var(--color-bg);
-  padding: 1em 1.5em;
-  border: 1px dashed var(--color-bg);
-  border-radius: 100%;
+.footer-col p:nth-child(2) {  
+  font-size: var(--font-reg); /* About Text */  
+  font-weight: 500;  
+  padding-top: 1vh;
+  padding-bottom: 10vh;
 }
 
-.footer-col:nth-child(3) a,
-.footer-col:nth-child(4) a {
-  color: var(--color-bg);
-  font-size: var(--font-small);
+.footer-col a {
+  font-size: var(--font-reg);
+  font-weight: 500;
+  padding-top: 1vh;
 }
 
-.footer-col .magnetic-area {
-  margin-top: -20px;
-  margin-left: -20px;
-  padding: 20px;
-  background-color: none;
+/* ✅ Responsive Adjustments */
+@media (max-width: 950px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+  }
+
+  h1 {
+    font-size: 40px;
+  }
+
+  h1 span {
+    font-size: 40px;
+  }
+
+
+  .card {
+    width: 200px;
+  }
+
+  .card-3 {
+    left: 50%;
+  }
+
+  
+
+  .footer-row {
+    flex-direction: column;       /* Stack columns vertically */
+    align-items: stretch;   
+    gap: 0em;          /* Full-width columns */
+  }
+
+
+
+  .footer-col p:nth-child(2) {
+    font-size: var(--font-reg);
+    font-weight: 500;
+    padding-top: 1vh;
+    padding-bottom: 0;
+}
+  .footer-col {
+    width: 100%;
+    padding: 1em;                 /* Adjust padding for smaller screens */
+  }
+
+  .footer-row:last-child {
+    padding: 0 1em;               /* Match padding with other footer-cols */
+  }
+
+  .footer-row:last-child {
+    display: flex;
+    justify-content: space-between;   /* Aligns "San Francisco" left & "Shawn Jr" right */
+    align-items: center;
+    padding: 0 1em;                   /* Consistent padding */
+  }
+
+  .footer-row:last-child p {
+    width: 100%;
+    padding-bottom: 1vh;   
+    text-align: center;                 /* Align "San Francisco" to the left */
+  }
+
+  .footer-row:last-child p:last-child {
+    text-align: center;  
+    width: 100%;
+    padding-bottom: 2vh;             /* Align "Shawn Jr" to the right */
+  }
 }
 
 .footer-col .btn {
@@ -301,33 +377,6 @@ footer.light .footer-col .btn p {
   z-index: 2;
 }
 
-@media (max-width: 950px) {
-  h1 {
-    font-size: 40px;
-  }
-
-  h1 span {
-    font-size: 40px;
-  }
-
-  .footer-row:nth-child(1) {
-    display: flex;
-    flex-direction: column;
-    gap: 4em;
-  }
-
-  .card {
-    width: 200px;
-  }
-
-  .card-3 {
-    left: 50%;
-  }
-}
-
-
-
-
 
 
 /* ✅ Hero Section */
@@ -377,8 +426,12 @@ footer.light .footer-col .btn p {
 
 
 
-/* ✅ Responsive Fix for Devices with Width ≤ 949px */
 @media (max-width: 400px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+  }
   .hero {
     height: 100dvh;                 /* ✅ Dynamic viewport height for iOS Safari */
     display: flex;
@@ -407,8 +460,8 @@ footer.light .footer-col .btn p {
     max-width: 90%;
   }
 
-   /* ✅ "Design & Advocacy" Alignment */
-   .hero-row:nth-child(2) .header {
+  /* ✅ "Design & Advocacy" Alignment */
+  .hero-row:nth-child(2) .header {
     text-align: right;
     margin: 8px 12px 16px 0;
   }
@@ -422,18 +475,51 @@ footer.light .footer-col .btn p {
 
   .footer-row:nth-child(2) {
     display: flex;
-    justify-content: space-between; /* Push items to opposite ends */
-    padding: 0 0em;                 /* Add horizontal padding */
+    justify-content: space-between;   /* Push items to opposite ends */
+    padding: 0 0em;                   /* Add horizontal padding */
   }
 
   .footer-row:nth-child(2) p {
-    font-size: var(--font-tiny);    /* Slightly reduce the font size */
-    width: 45%;                     /* Limit the width of each item */
-    text-align: left;               /* Align text to the left */
+    font-size: var(--font-tiny);      /* Slightly reduce the font size */
+    width: 45%;                       /* Limit the width of each item */
+    text-align: left;                 /* Align text to the left */
   }
 
   .footer-row:nth-child(2) p:last-child {
-    text-align: right;              /* Align the last item to the right */
+    text-align: right;                /* Align the last item to the right */
+  }
+
+  /* ✅ Reduce Extra Spacing in About Section */
+  .footer-col p:nth-child(2) {  
+    font-size: var(--font-reg); 
+    font-weight: 500;  
+    padding-top: 1vh;
+    margin-bottom: 0vh;             /* Reduced spacing */
+  }
+
+  .footer-row {  
+    gap: 0em;          /* Full-width columns */
+  }
+
+
+  /* ✅ Align Footer Bottom Row */
+  .footer-row:last-child {
+    display: flex;
+    justify-content: space-between;   /* Aligns "San Francisco" left & "Shawn Jr" right */
+    align-items: center;
+    padding: 0 1em;             /* Consistent padding */
+  }
+
+  .footer-row:last-child p {
+    width: 100%;
+    padding-bottom: 1vh;   
+    text-align: center;                 /* Align "San Francisco" to the left */
+  }
+
+  .footer-row:last-child p:last-child {
+    width: 100%;
+    text-align: center;      
+    padding-bottom: 2vh;         
   }
 }
 
@@ -443,20 +529,28 @@ footer.light .footer-col .btn p {
 
 
 
-/* ✅ Adjust Hero Section for Devices Between 401px and 949px */
+
+
+
+
 @media (min-width: 401px) and (max-width: 949px) {
+  .container {
+    width: 100%;
+    height: 100%;
+    padding: 1em;
+  }
   .hero {
-    height: 100dvh;                /* ✅ Reduce the section height */
+    height: 100dvh;                   /* ✅ Reduce the section height */
     display: flex;
     flex-direction: column;
-    justify-content: space-between;  /* ✅ Distribute content evenly */
+    justify-content: space-between;   /* ✅ Distribute content evenly */
     background-color: var(--color-bg); /* ✅ Ensure background color remains consistent */
   }
 
   .hero-row {
     flex-direction: column;
     align-items: stretch;
-    padding: 0 12px;                 /* ✅ Maintain slight horizontal padding */
+    padding: 0 12px;                  /* ✅ Maintain slight horizontal padding */
     margin: 0;
   }
 
@@ -484,20 +578,55 @@ footer.light .footer-col .btn p {
     line-height: 1.2;
     margin: 0;
   }
+
   .footer-row:nth-child(2) {
     display: flex;
-    justify-content: space-between; /* Push items to opposite ends */
-    padding: 0 0em;                 /* Add horizontal padding */
+    justify-content: space-between;   /* Push items to opposite ends */
+    padding: 0 0em;                   /* Add horizontal padding */
   }
 
   .footer-row:nth-child(2) p {
-    font-size: var(--font-tiny);    /* Slightly reduce the font size */
-    width: 45%;                     /* Limit the width of each item */
-    text-align: left;               /* Align text to the left */
+    font-size: var(--font-tiny);      /* Slightly reduce the font size */
+    width: 45%;                       /* Limit the width of each item */
+    text-align: left;                 /* Align text to the left */
   }
 
+
+  .footer-row {  
+    gap: 0em;          /* Full-width columns */
+  }
+
+  
   .footer-row:nth-child(2) p:last-child {
-    text-align: right;              /* Align the last item to the right */
+    text-align: right;                /* Align the last item to the right */
+  }
+
+  /* ✅ Reduce Extra Spacing in About Section */
+  .footer-col p:nth-child(2) {  
+    font-size: var(--font-reg); 
+    font-weight: 500;  
+    padding-top: 1vh;
+    margin-bottom: 0vh;             /* Reduced spacing */
+  }
+
+  /* ✅ Align Footer Bottom Row */
+  .footer-row:last-child {
+    display: flex;
+    justify-content: space-between;   /* Aligns "San Francisco" left & "Shawn Jr" right */
+    align-items: center;
+    padding: 0 1em;                   /* Consistent padding */
+  }
+
+  .footer-row:last-child p {
+    width: 100%;
+    padding-bottom: 1vh;     
+    text-align: center;                 /* Align "San Francisco" to the left */
+  }
+
+  .footer-row:last-child p:last-child {
+    width: 100%;
+    text-align: center;   
+    padding-bottom: 2vh;           
   }
 }
 
