@@ -21,11 +21,11 @@
   background-color: currentColor;
   transform: scaleX(0); /* Initially invisible */
   transform-origin: left; /* Grows from the left on hover */
-  transition: transform 0.4s ease-in-out, transform-origin 0s; /* Smooth animation */
+  transition: transform 0.6s cubic-bezier(0.645, 0.045, 0.355, 1); /* Smooth animation */
 }
 
 /* Hover State */
-.email-link:hover::after {
+.email-:hover::after {
   transform: scaleX(1); /* Expand to full width */
   transform-origin: left; /* Expands from left to right */
 }
