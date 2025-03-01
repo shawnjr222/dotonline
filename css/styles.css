@@ -25,7 +25,7 @@
 }
 
 /* Hover State */
-.email-:hover::after {
+.email-link:hover::after {
   transform: scaleX(1); /* Expand to full width */
   transform-origin: left; /* Expands from left to right */
 }
