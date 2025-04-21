@@ -63,8 +63,8 @@
 
 /* Root Variables */
 :root {
-  --color-accent: #FFEEDB;
-  --color-bg: #745C45;
+  --color-accent: #fff;
+  --color-bg: #1250C4;
 
   --font-large: 140px;
   --font-reg: 18px;
